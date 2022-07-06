@@ -14,6 +14,8 @@ App::~App()
 
 bool App::OnInit()
 {
+	calcFrame = new Main();
+	calcFrame->Show();
 	return true;
 }
 
