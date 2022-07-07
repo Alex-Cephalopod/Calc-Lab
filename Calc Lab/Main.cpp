@@ -69,8 +69,25 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), wxSiz
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
 	int action = evt.GetId() - 10000;
+	int mode = 0;
 
-	*calcBox << action;
+	if (action > 1000 && action < 1004)
+	{
+		mode = action;
+	}
+	
+	if (mode == 1)
+	{
+		switch (action)
+		{
+		case 1:
+		{
+
+		}
+		}
+	}
+		//*calcBox << action;
+	
 }
 
 Main::~Main()
