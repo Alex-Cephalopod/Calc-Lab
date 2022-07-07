@@ -8,7 +8,7 @@ public:
 	~Main();
 
 public:
-	//void OnButtonClicked(wxCommandEvent& evt);
+	void OnButtonClicked(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();
 
 private:
