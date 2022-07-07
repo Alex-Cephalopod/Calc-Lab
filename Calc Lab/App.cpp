@@ -9,7 +9,6 @@ App::App()
 
 App::~App()
 {
-
 }
 
 bool App::OnInit()
