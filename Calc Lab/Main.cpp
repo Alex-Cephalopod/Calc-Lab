@@ -77,25 +77,11 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), wxSiz
 		btns[i]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &Main::OnButtonClicked, this);
 	}
 
-	//int i = 0;
-
-	/*btns = new wxButton * [20];
-
-	for (int x = 1; x <= 4; x++)
-	{
-		for (int y = 1; y <= 5; y++)
-		{
-			btns[i] = new wxButton(this, wxID_ANY, wxPoint());
-		}
-	}*/
-
-	// I tried to create a nested for loop, but it did not work. Will work on it before next class
 }
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
 	int action = evt.GetId();
-	//int mode = 0;
 
 	if (action >= 0 && action < 10)
 	{

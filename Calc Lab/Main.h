@@ -15,7 +15,6 @@ public:
 private:
 
 	wxButton** btns;
-	//std::vector<wxButton> btns;
 
 	wxTextCtrl* calcBox = nullptr;
 	wxButton* test0 = nullptr;
