@@ -1,5 +1,6 @@
 #pragma once
 #include "wx\wx.h"
+//#include <vector>
 
 class Main : public wxFrame
 {
@@ -12,6 +13,10 @@ public:
 	wxDECLARE_EVENT_TABLE();
 
 private:
+
+	wxButton** btns;
+	//std::vector<wxButton> btns;
+
 	wxTextCtrl* calcBox = nullptr;
 	wxButton* test0 = nullptr;
 	wxButton* test1 = nullptr;
@@ -23,6 +28,12 @@ private:
 	wxButton* test7 = nullptr;
 	wxButton* test8 = nullptr;
 	wxButton* test9 = nullptr;
+	wxButton* testA = nullptr;
+	wxButton* testB = nullptr;
+	wxButton* testC = nullptr;
+	wxButton* testD = nullptr;
+	wxButton* testE = nullptr;
+	wxButton* testF = nullptr;
 	wxButton* testPlus = nullptr;
 	wxButton* testMinus = nullptr;
 	wxButton* testTimes = nullptr;
@@ -33,10 +44,10 @@ private:
 	wxButton* testHex = nullptr;
 	wxButton* testDec = nullptr;
 	wxButton* testBin = nullptr;
-	wxButton* testC = nullptr;
+	wxButton* testClear = nullptr;
 
 	//wxButton** btns;
 	//int nFieldW = 10;
-	int nFieldH = 130;
+	int nFieldH = 100;
 };
 
