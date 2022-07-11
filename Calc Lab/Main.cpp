@@ -99,33 +99,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 Main::~Main()
 {
 	delete calcBox;
-	delete test0;
-	delete test1;
-	delete test2;
-	delete test3;
-	delete test4;
-	delete test5;
-	delete test6 ;
-	delete test7;
-	delete test8;
-	delete test9;
-	delete testA;
-	delete testB;
-	delete testC;
-	delete testD;
-	delete testE;
-	delete testF;
-	delete testPlus;
-	delete testMinus ;
-	delete testTimes ;
-	delete testDiv ;
-	delete testMod ;
-	delete testResult ;
-	delete testNegate ;
-	delete testHex ;
-	delete testDec ;
-	delete testBin ;
-	delete testClear;
 	
 	delete[] FctBtns;
 	delete[] btns;
