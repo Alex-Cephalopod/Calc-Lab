@@ -11,12 +11,12 @@ int num2 = 0;
 int hist = 0;
 std::string strNum;
 
-Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), wxSize(319, 670))
+Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), wxSize(400, 670), (wxDEFAULT_FRAME_STYLE & ~wxRESIZE_BORDER))
 {
 	Factory_Button btnCreator;
 	FctBtns = new wxButton * [27];
 
-	calcBox = new wxTextCtrl(this, 11000, "", wxPoint(0, 0), wxSize(300, 100), wxTE_RIGHT | wxTE_READONLY);
+	calcBox = new wxTextCtrl(this, 11000, "", wxPoint(0, 0), wxSize(385, 100), wxTE_RIGHT | wxTE_READONLY);
 	calcBox->SetFont(calcBox->GetFont().Scale(2));
 
 	opBox = new wxTextCtrl(this, 12000, "", wxPoint(0, 175), wxSize(224, 150), wxTE_CENTER | wxTE_READONLY);
@@ -51,6 +51,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			opBox->Clear();
 			calcBox->Clear();
 			equalsHit = false;
+			strNum = "";
 		}
 
 		*calcBox << action;
@@ -61,16 +62,43 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		switch (action)
 		{
 		case 1001:
-			//*calcBox << "HEX";
+		{
+			if (strNum.length() != 0)
+			{
+				equalsHit = true;
+				calcBox->Clear();
+				opBox->Clear();
+				int temp = stoi(strNum);
+				*calcBox << CalculatorProcessor::GetInsance().ToHex(temp);
+				*opBox << "HEX";
+			}
 			break;
+		}
 		case 1002:
-			//*calcBox << "DEC";
+			if (strNum.length() != 0)
+			{
+				calcBox->Clear();
+				opBox->Clear();
+				*calcBox << strNum;
+				*opBox << "DEC";
+				equalsHit = true;
+			}
 			break;
 		case 1003:
-			//*calcBox << "BIN";
+			if (strNum.length() != 0)
+			{
+				equalsHit = true;
+				calcBox->Clear();
+				opBox->Clear();
+				int temp = stoi(strNum);
+				*calcBox << CalculatorProcessor::GetInsance().toBin(temp);
+				*opBox << "BIN";
+				break;
+			}
 			break;
 		case 1004:
 			calcBox->Clear();
+			opBox->Clear();
 			hist = 0;
 			num = 0;
 			num2 = 0;
@@ -83,11 +111,15 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		case 1005:
 		{
-			int temp = stoi(strNum);
-			temp = CalculatorProcessor::GetInsance().NegarNumero(temp);
-			strNum = std::to_string(temp);
-			calcBox->Clear();
-			*calcBox << strNum;
+			if (strNum.length() != 0)
+			{
+				int temp = stoi(strNum);
+				temp = CalculatorProcessor::GetInsance().NegarNumero(temp);
+				strNum = std::to_string(temp);
+				calcBox->Clear();
+				opBox->Clear();
+				*calcBox << strNum;
+			}
 			break;
 		}
 
@@ -95,7 +127,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 			if (equation && strNum.length() != 0)
 			{
-
 
 				num = stoi(strNum);
 
@@ -191,7 +222,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 				calcBox->Clear();
 				hist = CalculatorProcessor::GetInsance().ResultadoInt(num, num2, symbol);
 				*calcBox << "=" << hist;
-				strNum = "";
+				strNum = std::to_string(hist);
 				equation = true;
 				break;
 			}
