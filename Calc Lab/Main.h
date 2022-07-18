@@ -1,6 +1,7 @@
 #pragma once
 #include "wx\wx.h"
 #include "Factory_Button.h"
+#include "CalculatorProcessor.h"
 //#include <vector>
 
 class Main : public wxFrame
@@ -19,6 +20,7 @@ private:
 	wxButton** FctBtns;
 
 	wxTextCtrl* calcBox = nullptr;
+	wxTextCtrl* opBox = nullptr;
 	
 	int nFieldH = 100;
 };

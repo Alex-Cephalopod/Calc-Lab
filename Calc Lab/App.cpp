@@ -9,7 +9,7 @@ App::App()
 
 App::~App()
 {
-
+	calcFrame;
 }
 
 bool App::OnInit()

@@ -11,6 +11,7 @@ public:
 
 	wxButton *CreateNumberButtons(wxFrame* parent, int i);
 	wxButton *CreateFunctionButtons(wxFrame* parent, int i);
+	int getButtonID(wxCommandEvent& evt);
 	~Factory_Button();
 
 };
