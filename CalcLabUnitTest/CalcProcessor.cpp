@@ -5,6 +5,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+//This is the calculator processor test, I just forgot to add the test to the name
 namespace CalcProcessor
 {
 	TEST_CLASS(CalcLabUnitTest)
