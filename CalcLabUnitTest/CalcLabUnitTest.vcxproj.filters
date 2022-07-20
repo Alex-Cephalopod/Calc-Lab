@@ -24,9 +24,15 @@
     <ClCompile Include="CalcProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Calc Lab\CalculatorProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Calc Lab\CalculatorProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

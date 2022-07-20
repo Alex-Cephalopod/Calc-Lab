@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Calc Lab\CalculatorProcessor.cpp" />
     <ClCompile Include="CalcLabUnitTest.cpp" />
     <ClCompile Include="CalcProcessor.cpp" />
     <ClCompile Include="pch.cpp">
@@ -166,6 +167,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Calc Lab\CalculatorProcessor.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

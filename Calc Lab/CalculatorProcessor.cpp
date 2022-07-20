@@ -1,6 +1,6 @@
 #include "CalculatorProcessor.h"
 
-CalculatorProcessor& CalculatorProcessor::GetInsance()
+CalculatorProcessor& CalculatorProcessor::GetInstance()
 {
 	static CalculatorProcessor* singleton = new CalculatorProcessor();
 	return *singleton;
@@ -22,14 +22,6 @@ int CalculatorProcessor::ResultadoInt(int a, int b, char op)
 	case '/':
 		return a / b;
 		break;
-		/*try
-		{
-			return a / b;
-		}
-		catch ()
-		{
-
-		}*/
 	case '%':
 		return a % b;
 	}

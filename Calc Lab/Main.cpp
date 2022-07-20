@@ -69,7 +69,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 				calcBox->Clear();
 				opBox->Clear();
 				int temp = stoi(strNum);
-				*calcBox << CalculatorProcessor::GetInsance().ToHex(temp);
+				*calcBox << CalculatorProcessor::GetInstance().ToHex(temp);
 				*opBox << "HEX";
 			}
 			break;
@@ -91,7 +91,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 				calcBox->Clear();
 				opBox->Clear();
 				int temp = stoi(strNum);
-				*calcBox << CalculatorProcessor::GetInsance().toBin(temp);
+				*calcBox << CalculatorProcessor::GetInstance().toBin(temp);
 				*opBox << "BIN";
 				break;
 			}
@@ -114,7 +114,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			if (strNum.length() != 0)
 			{
 				int temp = stoi(strNum);
-				temp = CalculatorProcessor::GetInsance().NegarNumero(temp);
+				temp = CalculatorProcessor::GetInstance().NegarNumero(temp);
 				strNum = std::to_string(temp);
 				calcBox->Clear();
 				opBox->Clear();
@@ -220,9 +220,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 				equalsHit = true;
 				num2 = stoi(strNum);
 				calcBox->Clear();
-				hist = CalculatorProcessor::GetInsance().ResultadoInt(num, num2, symbol);
+				hist = CalculatorProcessor::GetInstance().ResultadoInt(num, num2, symbol);
 				*calcBox << "=" << hist;
-				strNum = std::to_string(hist);
 				equation = true;
 				break;
 			}
