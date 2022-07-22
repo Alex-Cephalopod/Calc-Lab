@@ -21,7 +21,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), wxSiz
 	test1 = new wxButton(this, 10001, "1", wxPoint(10, nFieldH + 300), wxSize(75, 75));
 	test2 = new wxButton(this, 10002, "2", wxPoint(110, nFieldH + 300), wxSize(75, 75));
 	test3 = new wxButton(this, 10003, "3", wxPoint(210, nFieldH + 300), wxSize(75, 75));
-	testTimes = new wxButton(this, 11007, "x", wxPoint(310, nFieldH + 300), wxSize(75, 75));
+	testTimes = new wxButton(this, 11007, "*", wxPoint(310, nFieldH + 300), wxSize(75, 75));
 	test0 = new wxButton(this, 10000, "0", wxPoint(10, nFieldH + 400), wxSize(75, 75));
 	testMod = new wxButton(this, 11008, "MOD", wxPoint(110, nFieldH + 400), wxSize(75, 75));
 	testDiv = new wxButton(this, 11009, "/", wxPoint(210, nFieldH + 400), wxSize(75, 75));
@@ -70,23 +70,51 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 {
 	int action = evt.GetId() - 10000;
 	int mode = 0;
-
-	if (action > 1000 && action < 1004)
-	{
-		mode = action;
-	}
 	
-	if (mode == 1)
+	if (action >= 0 && action < 10)
+	{
+		*calcBox << action;
+	}
+
+	else
 	{
 		switch (action)
 		{
-		case 1:
-		{
-
-		}
+		case 1001:
+			*calcBox << "HEX";
+			break;
+		case 1002:
+			*calcBox << "DEC";
+			break;
+		case 1003:
+			*calcBox << "BIN";
+			break;
+		case 1004:
+			*calcBox << "(-)";
+			break;
+		case 1005:
+			*calcBox << "+";
+			break;
+		case 1006:
+			*calcBox << "-";
+			break;
+		case 1007:
+			*calcBox << "*";
+			break;
+		case 1008:
+			*calcBox << "MOD";
+			break;
+		case 1009:
+			*calcBox << "/";
+			break;
+		case 1010:
+			*calcBox << "=";
+			break;
+		case 1011:
+			*calcBox << "C";
+			break;
 		}
 	}
-		//*calcBox << action;
 	
 }
 
